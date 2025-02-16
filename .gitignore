@@ -1,0 +1,4 @@
+rss-feeder
+rss-feeder.*
+*.esx
+.env
