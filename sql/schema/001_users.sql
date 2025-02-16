@@ -1,0 +1,12 @@
+-- +goose Up
+
+CREATE TABLE IF NOT EXISTS users(
+  id UUID PRIMARY KEY,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP,
+  name TEXT NOT NULL
+);
+
+-- +goose Down
+
+DROP TABLE IF EXISTS users;
