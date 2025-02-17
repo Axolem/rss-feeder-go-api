@@ -1,4 +1,14 @@
 version: "2"
+overrides:
+  go:
+    overrides:
+      - db_type: "timestamp"
+        nullable: true
+        engine: "postgresql"
+        go_type:
+          import: "gopkg.in/guregu/null.v4"
+          package: "null"
+          type: "Time"
 sql:
   - engine: "postgresql"
     queries: "sql/queries"
@@ -9,3 +19,4 @@ sql:
         sql_package: "database/sql"
         json_tags_case_style: "snake"
         emit_json_tags: true
+        emit_pointers_for_null_types: true
